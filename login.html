@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="icon"href="pics/title 1.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script>
+        function fill(){
+            x=false;
+             if (!document.getElementById("email").value){
+                document.getElementById("em").style.visibility = "visible";
+             return x;
+             }
+             else if(!document.getElementById("pass").value){
+                document.getElementById("pa").style.visibility = "visible";
+             return x;
+             }
+             else { x= true; return x;}
+        }
+    </script>
+</head>
+<body id="bod">
+    <body id="bod">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="home.php"> <img class="navimg" src="pics/bg 3.png"></a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="home.php#prod">Products</a></li>
+                <li><a href="about us.php">About Us</a></li>
+                <li><a href="contact us2.php">Contact Us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li class="active"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+          </nav>
+<div class="login">
+<form onsubmit="return x" action="Login.php" method="POST">
+    <p style="font-size: 40px;font-family: 'Roboto';font-weight: bolder;">Login</p>
+    <input class="in" type="text" name="email" id="email" placeholder="Email">
+     <p id="em" style="visibility: hidden;color: black;">fill this field</p>
+    <input class="in" type="password" name="pass" placeholder="Password "id="pass">
+     <p id="pa" style="visibility: hidden;color: black;">fill this field</p>
+    <input class="sub"type="submit" onclick="fill();" onsubmit="alert();" value="Login">
+    <p>Don't have an account ? <a href="Register.html">join us now</a></p>
+</form>
+<img style="position: absolute;left: 72%;top: 50%;transform: translate(-50%, -50%);" src="pics/login 2.png" alt="login">
+</div>
+</body>
+</html>

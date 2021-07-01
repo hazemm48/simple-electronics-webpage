@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="icon"href="pics/title 1.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script>
+         x=false;
+         function terms(){
+         te=document.getElementById("check");
+         if(te.checked==0){
+           document.getElementById("ag").style.visibility="visible";
+           return x;
+         }
+         else{document.getElementById("ag").style.visibility="hidden";}
+        }
+        function chkpass(){
+            var init=document.getElementById("initial");
+            var sec=document.getElementById("second");
+            if (init.value != sec.value){
+                document.getElementById("p2").style.visibility = "visible";
+                sec.select();
+                sec.focus();
+                return x;
+            }         
+        }
+        function fill(){
+             if (!document.getElementById("fname").value){
+                document.getElementById("fill").style.visibility = "visible";
+                fname.select();
+             return x;
+             }
+             else if(!document.getElementById("email").value){
+                document.getElementById("fill").style.visibility = "visible";
+                email.select();
+             return x;
+             }
+             else if(!document.getElementById("initial").value){
+                document.getElementById("fill").style.visibility = "visible";
+                initial.select();
+             return x;
+             }
+             else if(!document.getElementById("second").value){
+                document.getElementById("fill").style.visibility = "visible";
+                second.select();
+             return x;
+             }
+        }
+        function emai() {
+          em=document.getElementById("email");
+  var sear =em.value.search(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  if(sear!=0){
+    document.getElementById("emva").style.visibility = "visible";
+    return x;
+  }
+  else {document.getElementById("emva").style.visibility = "hidden";}
+        }
+        function cc(){
+        if (email()==fill()==chkpass()==terms()){
+x=true; 
+return x;
+        }
+      }
+    </script>
+</head>
+<body id="bod">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="home.php"> <img class="navimg" src="pics/bg 3.png"></a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="home.php#prod">Products</a></li>
+                <li><a href="about us.php">About Us</a></li>
+                <li><a href="contact us2.php">Contact Us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              </ul>
+            </div>
+          </nav>
+<div class="login">
+<form onsubmit="return x" action="Register.php" method="POST">
+    <p style="font-size: 40px;font-family: 'Roboto';font-weight: bolder;">Sign up</p>
+    <h6 id="fill" style="visibility: hidden;color: black;">Please fill all fields</h6>
+    <input class="in" type="text" name="fname" id="fname" placeholder="Your Name"><br>
+    <input class="in" type="text" name="email" id="email" placeholder="Your Email">
+    <p id="emva" style="visibility: hidden;color: black;">*wrong email statement*</p>
+    <input class="in" type="password" placeholder="Password" name="initial" id="initial" onfocus="emai();"><br>
+    <input class="in" type="password" name="second" placeholder="Re-enter password" id="second" onchange="chkpass();" >
+     <h6 id="p2" style="visibility: hidden;color: black;">*wrong entry*</h6>
+    <input style="margin-top: 30px;padding: 100px;" type="checkbox" id=check>I agree all statements for <span style="text-decoration: underline;">Terms of service</span>
+    <p id="ag" style="visibility: hidden;"> *Check the box*</p>
+    <input class="sub"type="submit" onclick="fill();terms();" value="Register">
+    <p>Already have an account ? <a href="login.html">login</a></p>
+</form>
+<img style="position: absolute;left: 72%;top: 50%;transform: translate(-50%, -50%);" src="pics/login 1.png" alt="login">
+</div>
+</body>
+</html>
